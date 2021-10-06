@@ -1,0 +1,24 @@
+{% if user.is_staff %}
+    <li class="label">Administrador</li>
+    <li>
+        <a class="sidebar-sub-toggle">
+            <i class="ti-home"></i> Ususarios
+            <span class="badge badge-primary">2</span>
+            <span class="sidebar-collapse-icon ti-angle-down"></span>
+        </a>
+        <ul>
+            <li>
+                <a href="{% url 'usuarios:listar_usuario' %}">Listar usuarios</a>
+            </li>
+            <li>
+                <a href="{% url 'usuarios:crear_usuario' %}">Crear usuarios</a>
+            </li>
+
+
+        </ul>
+    </li>{% endif %}
+
+<li>
+    <a href="{% url 'logout' %}">
+        <i class="ti-close"></i> Logout</a>
+</li>

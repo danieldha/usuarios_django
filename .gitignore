@@ -1,0 +1,11 @@
+.idea
+*.pyc
+.gitignore~
+
+media/
+*/migrations/*
+*/__pycache__/*
+
+# no ignorar
+!*/migrations/__init__.py
+!.gitignore

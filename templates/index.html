@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block titulo %}
+    Hola, Bienvenido
+{% endblock %}
+{% block contenido %}
+    {% if user.is_authenticated %}
+        <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-title">
+                    <h4>Bienvenido a usuarios en django</h4>
+
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        {% if user.is_staff %}
+                            <p> Eres un administrador</p>
+                        {% else %}
+                            <p> Eres un cliente</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /# column -->
+
+    </div>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary">Ingresar</a>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block titulo %}
+    {% if object %}
+        Editar
+    {% else %}
+        Crear
+    {% endif %} Usuario
+{% endblock %}
+{% block contenido %}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-title">
+                    <h4>Formiulario de Usuario</h4>
+
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        {% bootstrap_form_errors form %}
+                        <form method="post" action="" enctype="multipart/form-data" class="margin-bottom-0">
+                            {% csrf_token %}
+                            {% bootstrap_form form layout='inline' %}
+                            <div class="login-buttons">
+                                <button type="submit" class="btn btn-primary btn-block btn-lg">
+                                    {% if object %}
+                                        <i class="fa fa-edit"></i> Editar
+                                    {% else %}
+                                        <i class="fa fa-plus"></i> Crear
+                                    {% endif %}
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /# column -->
+
+    </div>
+
+{% endblock %}
